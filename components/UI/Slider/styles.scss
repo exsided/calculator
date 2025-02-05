@@ -1,0 +1,43 @@
+.ui-slider {
+    --track-bg-color: #{$gray-bg-color};
+    --track-fill-bg-color: #{$black-bg-color};
+
+    &_primary {
+        --track-fill-bg-color: #{$accent-bg-color};
+    }
+
+    .v-slider-thumb__surface {
+        @include box(vw(60, $desktop));
+        border: 1px solid $white-bg-color;
+        background-image: url('/svg/range-slider-icon.svg');
+        background-position: center;
+        background-size: vw(30 20, $desktop);
+        background-repeat: no-repeat;
+        background-color: var(--track-fill-bg-color);
+    }
+
+    .v-slider-thumb__ripple, .v-slider-thumb__surface:before, .v-slider-thumb__surface:after {
+        display: none;
+    }
+
+    .v-slider-track__background {
+        background-color: var(--track-bg-color);
+        height: vw(10, $desktop) !important;
+    }
+
+    .v-slider-track__fill {
+        background-color: var(--track-fill-bg-color);
+        height: vw(10, $desktop) !important;
+    }
+
+    .v-slider-track__tick {
+        background-color: transparent;
+    }
+
+    .v-slider-track__tick-label {
+        font-size: vw(24, $desktop) !important;
+        font-weight: 500;
+        line-height: vw(24, $desktop) !important;
+        margin-top: vw(55, $desktop) !important;
+    }
+}

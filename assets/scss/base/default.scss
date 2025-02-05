@@ -1,0 +1,18 @@
+html {
+    background-color: $secondary-bg-color;
+    color: $black-text-color;
+    font-size: vw(16, $desktop);
+}
+
+.container {
+    padding-left: vw(120, $desktop);
+    padding-right: vw(120, $desktop);
+    width: 100%;
+    max-width: vw(1440, $desktop);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.disable-scroll {
+    overflow: hidden;
+}

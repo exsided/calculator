@@ -1,0 +1,112 @@
+.ui-select {
+    $this: &;
+
+    --border-color: #{$gray-bg-color};
+
+    position: relative;
+    width: vw(368, $desktop);
+
+
+    &_is-open {
+        --border-color: #{$accent-bg-color};
+
+        .ui-select__label-arrow {
+            transform: translateY(-50%) rotate(180deg);
+        }
+    }
+
+    &__label {
+        position: relative;
+        display: flex;
+        align-items: center;
+        background-color: $white-bg-color;
+        border-radius: vw(8, $desktop);
+        padding: vw(18 16, $desktop);
+        cursor: pointer;
+        transition: .2s ease;
+        user-select: none;
+        height: vw(60, $desktop);
+        border: 1px solid var(--border-color);
+    }
+
+    &__label-arrow {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: .2s ease;
+
+        path {
+            stroke: #868799;
+        }
+    }
+
+    &__label-text {
+        font-size: vw(24, $desktop);
+        font-weight: 400;
+        line-height: vw(24, $desktop);
+
+        margin: 0;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    &__options {
+        position: absolute;
+        width: 100%;
+        z-index: 6;
+        max-height: 150px;
+        overflow: hidden;
+        background-color: $white-bg-color;
+        border: 1px solid var(--border-color);
+        border-top: unset;
+        left: 0;
+        top: 100%;
+        border-radius: 0 0 vw(8, $desktop) vw(8, $desktop);
+        transition: .2s ease;
+        margin: 0;
+        padding: 0;
+        margin-top: vw(-10, $desktop);
+        padding-top: vw(9, $desktop);
+        transform-origin: top;
+
+        &-enter-active, &-leave-active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        &-enter, &-leave-to {
+            opacity: 0;
+            visibility: hidden;
+            max-height: 0;
+            transform: scaleY(0);
+        }
+    }
+
+    &__option {
+        font-size: vw(24, $desktop);
+        font-weight: 400;
+        line-height: vw(24, $desktop);
+        color: $gray-text-color;
+        padding: vw(16, $desktop) vw(18, $desktop);
+        transition: .2s ease;
+        cursor: pointer;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+        &_active {
+            background-color: $accent-bg-color;
+            color: $white-text-color;
+        }
+
+        @include hover {
+            &:not(#{$this}__option_active) {
+                color: $black-text-color;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,31 @@
+.tariff-form {
+    &__field {
+        &:not(:last-of-type) {
+            margin-bottom: vw(90, $desktop);
+        }
+    }
+
+    &__radio {
+        &:not(:last-of-type) {
+            margin-bottom: vw(30, $desktop);
+        }
+    }
+
+    &__icon-radios {
+        display: flex;
+        gap: vw(15, $desktop);
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+        margin-top: vw(90, $desktop);
+    }
+
+    &__fixed-price {
+        font-size: vw(24, $desktop);
+        font-weight: 400;
+        line-height: vw(24, $desktop);
+        margin-left: vw(40, $desktop);
+    }
+}

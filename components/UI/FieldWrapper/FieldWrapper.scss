@@ -1,0 +1,8 @@
+.ui-field-wrapper {
+    &__title {
+        font-size: vw(32, $desktop);
+        font-weight: 500;
+        line-height: vw(32, $desktop);
+        margin-bottom: vw(40, $desktop);
+    }
+}

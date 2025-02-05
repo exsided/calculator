@@ -1,0 +1,23 @@
+.ui-button {
+    padding: vw(30 33, $desktop);
+    border: unset;
+    outline: unset;
+
+    &_primary {
+        background-color: $accent-bg-color;
+        font-size: vw(32, $desktop);
+        font-weight: 400;
+        line-height: vw(24, $desktop);
+        color: $white-text-color;
+        border-radius: vw(15, $desktop);
+        transition: .2s ease;
+
+        @include hover {
+            opacity: .9;
+        }
+
+        &:active {
+            transform: scale(.9);
+        }
+    }
+}

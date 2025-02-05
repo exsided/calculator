@@ -1,0 +1,13 @@
+html {
+    font-family: 'Inter';
+}
+
+h1 {
+    font-size: vw(64, $desktop);
+    font-weight: 700;
+    line-height: vw(64, $desktop);
+}
+
+*::selection {
+    background: $accent-color;
+}

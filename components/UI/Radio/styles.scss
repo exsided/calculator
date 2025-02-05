@@ -1,0 +1,53 @@
+.ui-radio {
+    $this: &;
+
+    --border-color: #{$gray-bg-color};
+    --bg-color: #{$white-bg-color};
+
+    display: block;
+    cursor: pointer;
+    width: fit-content;
+
+    @include hover {
+        --border-color: #{$accent-bg-color};
+    }
+
+    &_is-checked {
+        --border-color: #{$accent-bg-color};
+        --bg-color: #{$accent-bg-color};
+    }
+
+    &__input {
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: 0;
+        left: 0;
+        z-index: -10;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    &__body {
+        display: flex;
+    }
+
+    &__box {
+        @include box(vw(24, $desktop), vw(9, $desktop));
+        background-image: url('/svg/checked.svg');
+        background-position: center;
+        background-size: vw(24, $desktop);
+        background-repeat: no-repeat;
+        background-color: var(--bg-color);
+        border: 1px solid var(--border-color);
+        transition: .2s ease;
+    }
+
+    &__text {
+        font-size: vw(24, $desktop);
+        font-weight: 400;
+        line-height: vw(24, $desktop);
+        color: $black-text-color;
+        margin-left: vw(15, $desktop);
+    }
+}

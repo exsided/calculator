@@ -1,0 +1,66 @@
+.ui-icon-checkbox {
+    $this: &;
+
+    --bg-color: transparent;
+
+    display: block;
+    cursor: pointer;
+    width: fit-content;
+    user-select: none;
+
+    @include hover {
+        --bg-color: #{$white-bg-color};
+    }
+
+    &:active {
+        #{$this}__icon {
+            transform: scale(.8);
+        }
+    }
+
+    &_is-checked {
+        --bg-color: #{$white-bg-color};
+    }
+
+    &__input {
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: 0;
+        left: 0;
+        z-index: -10;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: vw(15, $desktop);
+        background-color: var(--bg-color);
+        border-radius: vw(45, $desktop) vw(45, $desktop) vw(15, $desktop) vw(15, $desktop);
+        transition: .2s ease;
+    }
+
+    &__icon-wrapper {
+        position: relative;
+        @include box(vw(60, $desktop));
+    }
+
+    &__icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include box(100%);
+        transition: .2s ease;
+    }
+
+    &__text {
+        font-size: vw(24, $desktop);
+        font-weight: 500;
+        line-height: vw(24, $desktop);
+        color: $black-text-color;
+        margin-top: vw(15, $desktop);
+    }
+}

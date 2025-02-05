@@ -1,0 +1,59 @@
+.ui-input {
+    $this: &;
+
+    --border-color: #{$gray-bg-color};
+    --border-width: 1px;
+    --bg-color: #{$white-bg-color};
+    --placeholder-color: #{$gray-text-color};
+    --text-color: #{$black-text-color};
+    --message-color: #{$gray-text-color};
+
+    display: block;
+    width: vw(368, $desktop);
+
+    &_focused {
+        --border-color: #{$accent-bg-color};
+        --border-width: 2px;
+    }
+
+    &_error {
+        --border-color: #{$red-bg-color};
+        --message-color: #{$red-text-color};
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        padding: 0 16px;
+        border-radius: 8px;
+        transition: .3s ease;
+        border: var(--border-width) solid var(--border-color);
+        background-color: var(--bg-color);
+        height: vw(60, $desktop);
+        cursor: text;
+    }
+
+    &__field {
+        font-size: vw(24, $desktop);
+        font-weight: 400;
+        line-height: vw(24, $desktop);
+        color: var(--text-color);
+        border: unset;
+        outline: unset;
+        background-color: transparent;
+        width: 100%;
+        flex-grow: 1;
+
+        &::placeholder {
+            color: $gray-text-color;
+        }
+    }
+
+    &__msg {
+        font-size: vw(12, $desktop);
+        font-weight: 500;
+        line-height: vw(17, $desktop);
+        color: var(--message-color);
+        margin-top: vw(10, $desktop);
+    }
+}
